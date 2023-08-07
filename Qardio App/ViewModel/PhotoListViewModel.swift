@@ -11,7 +11,7 @@ final class PhotoListViewModel: NSObject {
 
     private(set) var photos: [Photo] = []
     private(set) var isLoading = false
-    private let defaultSearchQuery = "Ocean" // required by FLICKR
+    private let defaultSearchQuery = "Ocean" // some test required by FLICKR
     private var page = 0
     
     var willLoadHandler: (() -> Void)?

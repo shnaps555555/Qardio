@@ -26,18 +26,18 @@ protocol RequestType {
 }
 
 public enum HttpMethod: String {
-  case get = "GET"
-  case post = "POST"
-  case patch = "PATCH"
-  case delete = "DELETE"
-  case put = "PUT"
+    case get = "GET"
+    case post = "POST"
+    case patch = "PATCH"
+    case delete = "DELETE"
+    case put = "PUT"
 }
 
 enum Request {
     private static var baseURL: String {
         "https://api.flickr.com/services/rest/"
     }
-
+    
     case fetchPhotosList(Int, Int, String)
 }
 
@@ -72,17 +72,17 @@ extension Request: RequestType {
     var headers: [String : String] {
         ["Content-Type": "application/json"]
     }
-
+    
     var httpBody: Data? {
-//        var json: [String: Any]?
-//        switch self {
-//        case .fetchPhotosList:
-//            json = nil
-//        }
-//
-//        if let json = json {
-//            return try? JSONSerialization.data(withJSONObject: json)
-//        }
+        //        var json: [String: Any]?
+        //        switch self {
+        //        case .fetchPhotosList:
+        //            json = nil
+        //        }
+        //
+        //        if let json = json {
+        //            return try? JSONSerialization.data(withJSONObject: json)
+        //        }
         return nil
     }
 }
