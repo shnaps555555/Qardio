@@ -9,23 +9,41 @@
 /* Begin PBXBuildFile section */
 		FADD66632A80D83800AECC0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD66622A80D83800AECC0D /* AppDelegate.swift */; };
 		FADD66652A80D83800AECC0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD66642A80D83800AECC0D /* SceneDelegate.swift */; };
-		FADD66672A80D83800AECC0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD66662A80D83800AECC0D /* ViewController.swift */; };
 		FADD666A2A80D83800AECC0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADD66682A80D83800AECC0D /* Main.storyboard */; };
 		FADD666D2A80D83800AECC0D /* Qardio_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FADD666B2A80D83800AECC0D /* Qardio_App.xcdatamodeld */; };
 		FADD666F2A80D83B00AECC0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FADD666E2A80D83B00AECC0D /* Assets.xcassets */; };
 		FADD66722A80D83B00AECC0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADD66702A80D83B00AECC0D /* LaunchScreen.storyboard */; };
+		FADD667B2A80DCEF00AECC0D /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD667A2A80DCEF00AECC0D /* PhotoListViewController.swift */; };
+		FADD667E2A80E20A00AECC0D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD667D2A80E20A00AECC0D /* Request.swift */; };
+		FADD66802A80E55B00AECC0D /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD667F2A80E55B00AECC0D /* HTTPStatusCode.swift */; };
+		FADD66822A80E99400AECC0D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD66812A80E99400AECC0D /* NetworkManager.swift */; };
+		FADD66842A80EC5400AECC0D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD66832A80EC5400AECC0D /* NetworkError.swift */; };
+		FADD66862A80ED5C00AECC0D /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD66852A80ED5C00AECC0D /* DataParser.swift */; };
+		FADD66882A80ED8700AECC0D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD66872A80ED8700AECC0D /* NetworkService.swift */; };
+		FADD668B2A80EDE900AECC0D /* PhotosListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD668A2A80EDE900AECC0D /* PhotosListResponse.swift */; };
+		FADD668D2A80EF6A00AECC0D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD668C2A80EF6A00AECC0D /* Photo.swift */; };
+		FADD668F2A80FCF800AECC0D /* KeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD668E2A80FCF800AECC0D /* KeyedDecodingContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FADD665F2A80D83800AECC0D /* Qardio App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Qardio App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADD66622A80D83800AECC0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FADD66642A80D83800AECC0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FADD66662A80D83800AECC0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FADD66692A80D83800AECC0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FADD666C2A80D83800AECC0D /* Qardio_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Qardio_App.xcdatamodel; sourceTree = "<group>"; };
 		FADD666E2A80D83B00AECC0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FADD66712A80D83B00AECC0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FADD66732A80D83B00AECC0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FADD667A2A80DCEF00AECC0D /* PhotoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
+		FADD667D2A80E20A00AECC0D /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		FADD667F2A80E55B00AECC0D /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
+		FADD66812A80E99400AECC0D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FADD66832A80EC5400AECC0D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		FADD66852A80ED5C00AECC0D /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
+		FADD66872A80ED8700AECC0D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		FADD668A2A80EDE900AECC0D /* PhotosListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListResponse.swift; sourceTree = "<group>"; };
+		FADD668C2A80EF6A00AECC0D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		FADD668E2A80FCF800AECC0D /* KeyedDecodingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedDecodingContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +78,9 @@
 			children = (
 				FADD66622A80D83800AECC0D /* AppDelegate.swift */,
 				FADD66642A80D83800AECC0D /* SceneDelegate.swift */,
-				FADD66662A80D83800AECC0D /* ViewController.swift */,
+				FADD66892A80EDC500AECC0D /* Model */,
+				FADD667C2A80E1D600AECC0D /* NetworkManager */,
+				FADD66792A80DCD100AECC0D /* ViewControllers */,
 				FADD66682A80D83800AECC0D /* Main.storyboard */,
 				FADD666E2A80D83B00AECC0D /* Assets.xcassets */,
 				FADD66702A80D83B00AECC0D /* LaunchScreen.storyboard */,
@@ -68,6 +88,37 @@
 				FADD666B2A80D83800AECC0D /* Qardio_App.xcdatamodeld */,
 			);
 			path = "Qardio App";
+			sourceTree = "<group>";
+		};
+		FADD66792A80DCD100AECC0D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FADD667A2A80DCEF00AECC0D /* PhotoListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FADD667C2A80E1D600AECC0D /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				FADD667D2A80E20A00AECC0D /* Request.swift */,
+				FADD667F2A80E55B00AECC0D /* HTTPStatusCode.swift */,
+				FADD66812A80E99400AECC0D /* NetworkManager.swift */,
+				FADD66832A80EC5400AECC0D /* NetworkError.swift */,
+				FADD66852A80ED5C00AECC0D /* DataParser.swift */,
+				FADD668E2A80FCF800AECC0D /* KeyedDecodingContainer.swift */,
+				FADD66872A80ED8700AECC0D /* NetworkService.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		FADD66892A80EDC500AECC0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FADD668A2A80EDE900AECC0D /* PhotosListResponse.swift */,
+				FADD668C2A80EF6A00AECC0D /* Photo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +192,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FADD66672A80D83800AECC0D /* ViewController.swift in Sources */,
+				FADD668D2A80EF6A00AECC0D /* Photo.swift in Sources */,
+				FADD66882A80ED8700AECC0D /* NetworkService.swift in Sources */,
+				FADD66802A80E55B00AECC0D /* HTTPStatusCode.swift in Sources */,
+				FADD66842A80EC5400AECC0D /* NetworkError.swift in Sources */,
 				FADD66632A80D83800AECC0D /* AppDelegate.swift in Sources */,
+				FADD667B2A80DCEF00AECC0D /* PhotoListViewController.swift in Sources */,
+				FADD66822A80E99400AECC0D /* NetworkManager.swift in Sources */,
+				FADD668B2A80EDE900AECC0D /* PhotosListResponse.swift in Sources */,
+				FADD667E2A80E20A00AECC0D /* Request.swift in Sources */,
 				FADD66652A80D83800AECC0D /* SceneDelegate.swift in Sources */,
 				FADD666D2A80D83800AECC0D /* Qardio_App.xcdatamodeld in Sources */,
+				FADD66862A80ED5C00AECC0D /* DataParser.swift in Sources */,
+				FADD668F2A80FCF800AECC0D /* KeyedDecodingContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
