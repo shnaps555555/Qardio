@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA4CA0942A812280001BB771 /* ImageCache in Resources */ = {isa = PBXBuildFile; fileRef = FA4CA0932A812280001BB771 /* ImageCache */; };
-		FA4CA0962A81228F001BB771 /* ImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = FA4CA0952A81228F001BB771 /* ImageCache */; };
 		FA4CA09A2A812740001BB771 /* DoubleRowStyleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA0992A812740001BB771 /* DoubleRowStyleLayout.swift */; };
 		FA4CA09D2A8128A3001BB771 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA09C2A8128A3001BB771 /* PhotoCell.swift */; };
 		FA4CA09F2A81296F001BB771 /* PhotoListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA09E2A81296F001BB771 /* PhotoListHeaderView.swift */; };
@@ -33,7 +31,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA4CA0932A812280001BB771 /* ImageCache */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ImageCache; sourceTree = "<group>"; };
 		FA4CA0992A812740001BB771 /* DoubleRowStyleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleRowStyleLayout.swift; sourceTree = "<group>"; };
 		FA4CA09C2A8128A3001BB771 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		FA4CA09E2A81296F001BB771 /* PhotoListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListHeaderView.swift; sourceTree = "<group>"; };
@@ -64,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA4CA0962A81228F001BB771 /* ImageCache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,17 +70,8 @@
 		FA4CA08F2A8121E7001BB771 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FA4CA0922A812280001BB771 /* Packages */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FA4CA0922A812280001BB771 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				FA4CA0932A812280001BB771 /* ImageCache */,
-			);
-			path = Packages;
 			sourceTree = "<group>";
 		};
 		FA4CA0982A8126F1001BB771 /* Layouts */ = {
@@ -206,7 +193,6 @@
 			);
 			name = "Qardio App";
 			packageProductDependencies = (
-				FA4CA0952A81228F001BB771 /* ImageCache */,
 			);
 			productName = "Qardio App";
 			productReference = FADD665F2A80D83800AECC0D /* Qardio App.app */;
@@ -251,7 +237,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FADD66722A80D83B00AECC0D /* LaunchScreen.storyboard in Resources */,
-				FA4CA0942A812280001BB771 /* ImageCache in Resources */,
 				FADD666F2A80D83B00AECC0D /* Assets.xcassets in Resources */,
 				FADD666A2A80D83800AECC0D /* Main.storyboard in Resources */,
 			);
@@ -497,13 +482,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		FA4CA0952A81228F001BB771 /* ImageCache */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ImageCache;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		FADD666B2A80D83800AECC0D /* Qardio_App.xcdatamodeld */ = {

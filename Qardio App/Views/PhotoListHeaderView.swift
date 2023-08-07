@@ -51,12 +51,12 @@ final class PhotoListHeaderView: UIView {
     addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[icon(35)]|", options: [], metrics: nil, views: viewsDict))
     addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[searchTextField]-5-[historyTable]-0-|", options: [], metrics: nil, views: viewsDict))
     addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-\(allwaysWisibleHeight)-[historyTable]-0-|", options: [], metrics: nil, views: viewsDict))
-    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-5-[icon(45)]-5-[searchTextField]-15-|", options: [], metrics: nil, views: viewsDict))
-    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-15-[historyTable]-15-|", options: [], metrics: nil, views: viewsDict))
+    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-5-[icon(45)]-5-[searchTextField]-6-|", options: [], metrics: nil, views: viewsDict))
+    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-6-[historyTable]-6-|", options: [], metrics: nil, views: viewsDict))
   }
   
   private func setupUI() {
-    icon.tintColor = .darkGray
+    icon.tintColor = .lightGray
     icon.contentMode = .scaleAspectFit
     
     historyTable.delegate = self
@@ -67,7 +67,7 @@ final class PhotoListHeaderView: UIView {
     historyTable.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
     backgroundColor = .clear
-    searchTextField.backgroundColor = .darkGray
+    searchTextField.backgroundColor = .lightGray
     searchTextField.textColor = .white
     searchTextField.layer.cornerRadius = 10
     searchTextField.inset = 15
@@ -111,8 +111,8 @@ extension PhotoListHeaderView: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
     cell.textLabel?.text = queryItems[indexPath.row]
-    cell.textLabel?.textColor = .lightGray
-    cell.backgroundColor = .darkGray
+    cell.textLabel?.textColor = .white
+    cell.backgroundColor = .lightGray
     cell.selectionStyle = .none
     return cell
   }

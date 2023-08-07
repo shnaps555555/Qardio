@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import ImageCache
 
 final class Photo: Decodable {
     let id: Int
@@ -50,7 +49,8 @@ final class Photo: Decodable {
            imageLoading == false,
            let fullPath {
             imageLoading = true
-            ImageCache.shared.load(url: fullPath) { [weak self] url, image in
+            
+            NetworkService.loadImage(fullPath: fullPath) { [weak self] image in
                 self?.imageLoading = false
                 self?.loadedImage = image
                 completion()

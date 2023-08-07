@@ -14,6 +14,7 @@ final class PhotoListViewController: UIViewController {
     @IBOutlet private weak var searchViewHeightConstraint: NSLayoutConstraint!
     
     let viewModel = PhotoListViewModel()
+    private var layout: DoubleRowStyleLayout? = nil
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -30,9 +31,9 @@ final class PhotoListViewController: UIViewController {
     }
     
     private func setupUI() {
-        if let layout = collectionView?.collectionViewLayout as? DoubleRowStyleLayout {
-            layout.delegate = self
-        }
+        layout = collectionView?.collectionViewLayout as? DoubleRowStyleLayout
+        layout?.delegate = self
+        
         //      if let patternImage = UIImage(named: "Pattern") {
         //        view.backgroundColor = UIColor(patternImage: patternImage)
         //      }
@@ -64,6 +65,7 @@ extension PhotoListViewController: UICollectionViewDataSource {
         let photo = viewModel.photos[indexPath.item]
         cell.photo = photo
         photo.loadImageIfNeeded { [weak self] in
+            self?.layout?.clearCache()
             self?.collectionView.reloadData()
         }
         
@@ -90,9 +92,7 @@ extension PhotoListViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension PhotoListViewController: DoubleRowStyleLayoutDelegate {
-    func collectionView(
-        _ collectionView: UICollectionView,
-        heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
-            return viewModel.photos[indexPath.item].image.size.height / 2
+    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
+            return min(viewModel.photos[indexPath.item].image.size.height / 2, 200) // max image height is 200; if we split original image height it will fit perfectly
         }
 }
