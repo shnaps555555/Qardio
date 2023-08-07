@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="Px2-A6-Lpq">
-                                <rect key="frame" x="21" y="141.5" width="278" height="285"/>
+                                <rect key="frame" x="80" y="202" width="160" height="164"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Px2-A6-Lpq" secondAttribute="height" multiplier="186:191" id="up9-hf-XDe"/>
                                 </constraints>
@@ -26,9 +26,8 @@
                         <color key="backgroundColor" red="0.3761726916" green="0.62702596190000004" blue="0.32543140650000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Px2-A6-Lpq" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="RQa-kX-U1E"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Px2-A6-Lpq" secondAttribute="trailing" constant="21" id="bRv-Ie-HSJ"/>
+                            <constraint firstItem="Px2-A6-Lpq" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.5" id="TBJ-JC-CuX"/>
                             <constraint firstItem="Px2-A6-Lpq" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="utm-u8-j0p"/>
-                            <constraint firstItem="Px2-A6-Lpq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="vlJ-Ii-n1B"/>
                         </constraints>
                     </view>
                 </viewController>
