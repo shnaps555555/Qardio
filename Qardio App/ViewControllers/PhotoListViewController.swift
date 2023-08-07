@@ -10,7 +10,8 @@ import UIKit
 final class PhotoListViewController: UIViewController {
     
     @IBOutlet private weak var searchView: PhotoListHeaderView!
-    @IBOutlet private var collectionView: UICollectionView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var searchViewHeightConstraint: NSLayoutConstraint!
     
     let viewModel = PhotoListViewModel()
@@ -24,23 +25,26 @@ final class PhotoListViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        viewModel.loadPhotos { [weak self] in
+        
+        viewModel.willLoadHandler = { [weak self] in
+            self?.activityIndicator.startAnimating()
+        }
+        viewModel.didLoadHandler = { [weak self] in
             guard let self else { return }
+            
+            self.activityIndicator.stopAnimating()
             self.collectionView.reloadData()
         }
+        viewModel.loadPhotos()
     }
     
     private func setupUI() {
         layout = collectionView?.collectionViewLayout as? DoubleRowStyleLayout
         layout?.delegate = self
         
-        //      if let patternImage = UIImage(named: "Pattern") {
-        //        view.backgroundColor = UIColor(patternImage: patternImage)
-        //      }
         collectionView?.backgroundColor = .clear
         searchView.delegate = self
     }
-    
 }
 
 extension PhotoListViewController: PhotoListHeaderViewDelegate {
@@ -50,7 +54,9 @@ extension PhotoListViewController: PhotoListHeaderViewDelegate {
     }
     
     func historyViewDidSearch(query: String) {
-        
+        viewModel.searchQuery = query
+        viewModel.loadPhotos()
+        collectionView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: true)
     }
     
 }
@@ -80,13 +86,13 @@ extension PhotoListViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height) {
-            //            viewModel.photos.append(contentsOf: Photo.allPhotos())
-            //            collectionView.reloadData()
+        if scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height) && viewModel.isLoading == false {
+            viewModel.loadPhotos()
         }
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchView.setSearchText(viewModel.searchQuery)
         searchView.endEditing(true)
     }
 }

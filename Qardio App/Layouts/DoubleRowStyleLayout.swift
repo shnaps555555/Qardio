@@ -36,6 +36,7 @@ class DoubleRowStyleLayout: UICollectionViewLayout {
     
     func clearCache() {
         cache = []
+        contentHeight = 0
     }
     
     override func prepare() {

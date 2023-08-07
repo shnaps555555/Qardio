@@ -98,11 +98,17 @@ here</string>
                                     <constraint firstAttribute="height" constant="55" id="qEo-X7-IDT"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="xXu-xi-7NC">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                                <color key="color" systemColor="systemGreenColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aYa-zP-jKI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="9EN-Jf-Vp6"/>
+                            <constraint firstItem="xXu-xi-7NC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="W1b-Ss-y2f"/>
+                            <constraint firstItem="xXu-xi-7NC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZoZ-Ev-pYS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OFo-c7-Jcb" secondAttribute="trailing" id="oO5-C3-Lrn"/>
                             <constraint firstItem="OFo-c7-Jcb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="quH-ZV-Qy7"/>
                             <constraint firstItem="aYa-zP-jKI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rY2-ff-X9R"/>
@@ -112,6 +118,7 @@ here</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="xXu-xi-7NC" id="lUk-Be-S6d"/>
                         <outlet property="collectionView" destination="aYa-zP-jKI" id="Mud-yP-7qo"/>
                         <outlet property="searchView" destination="OFo-c7-Jcb" id="6cZ-6h-QDJ"/>
                         <outlet property="searchViewHeightConstraint" destination="qEo-X7-IDT" id="dwF-Sc-BMF"/>
