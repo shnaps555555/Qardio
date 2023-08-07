@@ -13,6 +13,10 @@
 		FA4CA0A22A8129D3001BB771 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA0A12A8129D3001BB771 /* PaddingTextField.swift */; };
 		FA4CA0A52A812B2A001BB771 /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA0A42A812B2A001BB771 /* PhotoListViewModel.swift */; };
 		FA4CA0A82A814894001BB771 /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA0A72A814894001BB771 /* Optional+Extension.swift */; };
+		FA4CA0AC2A8155B1001BB771 /* SearchHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA0AA2A8155B1001BB771 /* SearchHistory.xcdatamodeld */; };
+		FA4CA0AE2A815605001BB771 /* SearchHistiryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA0AD2A815605001BB771 /* SearchHistiryManager.swift */; };
+		FA4CA0B12A815666001BB771 /* QueryItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA0AF2A815666001BB771 /* QueryItem+CoreDataClass.swift */; };
+		FA4CA0B22A815666001BB771 /* QueryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA0B02A815666001BB771 /* QueryItem+CoreDataProperties.swift */; };
 		FADD66632A80D83800AECC0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD66622A80D83800AECC0D /* AppDelegate.swift */; };
 		FADD66652A80D83800AECC0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD66642A80D83800AECC0D /* SceneDelegate.swift */; };
 		FADD666A2A80D83800AECC0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADD66682A80D83800AECC0D /* Main.storyboard */; };
@@ -38,6 +42,10 @@
 		FA4CA0A12A8129D3001BB771 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		FA4CA0A42A812B2A001BB771 /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
 		FA4CA0A72A814894001BB771 /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
+		FA4CA0AB2A8155B1001BB771 /* SearchHistory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SearchHistory.xcdatamodel; sourceTree = "<group>"; };
+		FA4CA0AD2A815605001BB771 /* SearchHistiryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistiryManager.swift; sourceTree = "<group>"; };
+		FA4CA0AF2A815666001BB771 /* QueryItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA4CA0B02A815666001BB771 /* QueryItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FADD665F2A80D83800AECC0D /* Qardio App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Qardio App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADD66622A80D83800AECC0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FADD66642A80D83800AECC0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +125,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FA4CA0A92A81558D001BB771 /* DataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CA0AA2A8155B1001BB771 /* SearchHistory.xcdatamodeld */,
+				FA4CA0AF2A815666001BB771 /* QueryItem+CoreDataClass.swift */,
+				FA4CA0B02A815666001BB771 /* QueryItem+CoreDataProperties.swift */,
+				FA4CA0AD2A815605001BB771 /* SearchHistiryManager.swift */,
+			);
+			path = DataStorage;
+			sourceTree = "<group>";
+		};
 		FADD66562A80D83800AECC0D = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +166,7 @@
 				FA4CA0982A8126F1001BB771 /* Layouts */,
 				FA4CA0A02A8129BB001BB771 /* Support */,
 				FA4CA0A62A81487B001BB771 /* Extensions */,
+				FA4CA0A92A81558D001BB771 /* DataStorage */,
 				FADD66682A80D83800AECC0D /* Main.storyboard */,
 				FADD666E2A80D83B00AECC0D /* Assets.xcassets */,
 				FADD66702A80D83B00AECC0D /* LaunchScreen.storyboard */,
@@ -261,6 +281,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FADD668D2A80EF6A00AECC0D /* Photo.swift in Sources */,
+				FA4CA0B12A815666001BB771 /* QueryItem+CoreDataClass.swift in Sources */,
+				FA4CA0B22A815666001BB771 /* QueryItem+CoreDataProperties.swift in Sources */,
 				FA4CA09D2A8128A3001BB771 /* PhotoCell.swift in Sources */,
 				FA4CA0A82A814894001BB771 /* Optional+Extension.swift in Sources */,
 				FADD66882A80ED8700AECC0D /* NetworkService.swift in Sources */,
@@ -270,11 +292,13 @@
 				FA4CA0A22A8129D3001BB771 /* PaddingTextField.swift in Sources */,
 				FADD66632A80D83800AECC0D /* AppDelegate.swift in Sources */,
 				FADD667B2A80DCEF00AECC0D /* PhotoListViewController.swift in Sources */,
+				FA4CA0AC2A8155B1001BB771 /* SearchHistory.xcdatamodeld in Sources */,
 				FADD66822A80E99400AECC0D /* NetworkManager.swift in Sources */,
 				FADD668B2A80EDE900AECC0D /* PhotosListResponse.swift in Sources */,
 				FADD667E2A80E20A00AECC0D /* Request.swift in Sources */,
 				FADD66652A80D83800AECC0D /* SceneDelegate.swift in Sources */,
 				FA4CA0A52A812B2A001BB771 /* PhotoListViewModel.swift in Sources */,
+				FA4CA0AE2A815605001BB771 /* SearchHistiryManager.swift in Sources */,
 				FADD666D2A80D83800AECC0D /* Qardio_App.xcdatamodeld in Sources */,
 				FADD66862A80ED5C00AECC0D /* DataParser.swift in Sources */,
 				FA4CA09F2A81296F001BB771 /* PhotoListHeaderView.swift in Sources */,
@@ -496,6 +520,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		FA4CA0AA2A8155B1001BB771 /* SearchHistory.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA4CA0AB2A8155B1001BB771 /* SearchHistory.xcdatamodel */,
+			);
+			currentVersion = FA4CA0AB2A8155B1001BB771 /* SearchHistory.xcdatamodel */;
+			path = SearchHistory.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		FADD666B2A80D83800AECC0D /* Qardio_App.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

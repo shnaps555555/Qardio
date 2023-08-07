@@ -21,8 +21,8 @@ final class PhotoListHeaderView: UIView {
     private let itemHeight = 45.0
     private let allwaysWisibleHeight = 55.0
     
-    private var queryItems: [String] = []
-    
+    private var queryItems: [QueryItem] = []
+
     weak var delegate: PhotoListHeaderViewDelegate?
     private var contentHeight: CGFloat {
         allwaysWisibleHeight + min(4.5, Double(queryItems.count)) * itemHeight // 4.5 cells max
@@ -89,12 +89,13 @@ extension PhotoListHeaderView: UITextFieldDelegate {
         let query = textField.text ?? ""
         delegate?.historyViewDidSearch(query: query)
         if !query.isEmpty {
-            queryItems.append(query)
+            SearchHistiryManager.sharedManager.save(query: query)
         }
         
         return true
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        queryItems = SearchHistiryManager.sharedManager.fetchQueries()
         historyTable.reloadData()
         delegate?.historyViewDidChangeState(contentHeight)
     }
@@ -114,7 +115,7 @@ extension PhotoListHeaderView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = queryItems[indexPath.row]
+        cell.textLabel?.text = queryItems[indexPath.row].query
         cell.textLabel?.textColor = .white
         cell.backgroundColor = .lightGray
         cell.selectionStyle = .none
@@ -123,9 +124,9 @@ extension PhotoListHeaderView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let queryItem = queryItems[indexPath.row]
-        searchTextField.text = queryItem
+        searchTextField.text = queryItem.query
         searchTextField.resignFirstResponder()
-        delegate?.historyViewDidSearch(query: queryItem)
+        delegate?.historyViewDidSearch(query: queryItem.query ?? "")
     }
     
 }
