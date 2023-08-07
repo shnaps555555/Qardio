@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ImageCache
 
 final class Photo: Decodable {
     let id: Int
@@ -15,7 +16,13 @@ final class Photo: Decodable {
     let farm: Int
     let title: String
     
-    var fullPath: URL? {
+    private var loadedImage: UIImage?
+    private var imageLoading = false
+    var image: UIImage {
+        loadedImage ?? #imageLiteral(resourceName: "Placeholder")
+    }
+    
+    private var fullPath: URL? {
         URL(string:"http://farm\(farm).static.flickr.com/\(server)/\(id)_\(secret).jpg")
     }
     
@@ -36,5 +43,18 @@ final class Photo: Decodable {
         server = try container.decode(key: .server)
         farm = try container.decode(key: .farm)
         title = try container.decode(key: .title)
+    }
+    
+    func loadImageIfNeeded(_ completion: @escaping () -> Void) {
+        if loadedImage == nil,
+           imageLoading == false,
+           let fullPath {
+            imageLoading = true
+            ImageCache.shared.load(url: fullPath) { [weak self] url, image in
+                self?.imageLoading = false
+                self?.loadedImage = image
+                completion()
+            }
+        }
     }
 }

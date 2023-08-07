@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		FA4CA0942A812280001BB771 /* ImageCache in Resources */ = {isa = PBXBuildFile; fileRef = FA4CA0932A812280001BB771 /* ImageCache */; };
 		FA4CA0962A81228F001BB771 /* ImageCache in Frameworks */ = {isa = PBXBuildFile; productRef = FA4CA0952A81228F001BB771 /* ImageCache */; };
+		FA4CA09A2A812740001BB771 /* DoubleRowStyleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA0992A812740001BB771 /* DoubleRowStyleLayout.swift */; };
+		FA4CA09D2A8128A3001BB771 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA09C2A8128A3001BB771 /* PhotoCell.swift */; };
+		FA4CA09F2A81296F001BB771 /* PhotoListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA09E2A81296F001BB771 /* PhotoListHeaderView.swift */; };
+		FA4CA0A22A8129D3001BB771 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA0A12A8129D3001BB771 /* PaddingTextField.swift */; };
+		FA4CA0A52A812B2A001BB771 /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CA0A42A812B2A001BB771 /* PhotoListViewModel.swift */; };
 		FADD66632A80D83800AECC0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD66622A80D83800AECC0D /* AppDelegate.swift */; };
 		FADD66652A80D83800AECC0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADD66642A80D83800AECC0D /* SceneDelegate.swift */; };
 		FADD666A2A80D83800AECC0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADD66682A80D83800AECC0D /* Main.storyboard */; };
@@ -29,6 +34,11 @@
 
 /* Begin PBXFileReference section */
 		FA4CA0932A812280001BB771 /* ImageCache */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ImageCache; sourceTree = "<group>"; };
+		FA4CA0992A812740001BB771 /* DoubleRowStyleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleRowStyleLayout.swift; sourceTree = "<group>"; };
+		FA4CA09C2A8128A3001BB771 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		FA4CA09E2A81296F001BB771 /* PhotoListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListHeaderView.swift; sourceTree = "<group>"; };
+		FA4CA0A12A8129D3001BB771 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
+		FA4CA0A42A812B2A001BB771 /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
 		FADD665F2A80D83800AECC0D /* Qardio App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Qardio App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADD66622A80D83800AECC0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FADD66642A80D83800AECC0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +87,39 @@
 			path = Packages;
 			sourceTree = "<group>";
 		};
+		FA4CA0982A8126F1001BB771 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CA0992A812740001BB771 /* DoubleRowStyleLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		FA4CA09B2A81288D001BB771 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CA09C2A8128A3001BB771 /* PhotoCell.swift */,
+				FA4CA09E2A81296F001BB771 /* PhotoListHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA4CA0A02A8129BB001BB771 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CA0A12A8129D3001BB771 /* PaddingTextField.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		FA4CA0A32A812B10001BB771 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA4CA0A42A812B2A001BB771 /* PhotoListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FADD66562A80D83800AECC0D = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +145,10 @@
 				FADD66892A80EDC500AECC0D /* Model */,
 				FADD667C2A80E1D600AECC0D /* NetworkManager */,
 				FADD66792A80DCD100AECC0D /* ViewControllers */,
+				FA4CA09B2A81288D001BB771 /* Views */,
+				FA4CA0A32A812B10001BB771 /* ViewModel */,
+				FA4CA0982A8126F1001BB771 /* Layouts */,
+				FA4CA0A02A8129BB001BB771 /* Support */,
 				FADD66682A80D83800AECC0D /* Main.storyboard */,
 				FADD666E2A80D83B00AECC0D /* Assets.xcassets */,
 				FADD66702A80D83B00AECC0D /* LaunchScreen.storyboard */,
@@ -218,17 +265,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				FADD668D2A80EF6A00AECC0D /* Photo.swift in Sources */,
+				FA4CA09D2A8128A3001BB771 /* PhotoCell.swift in Sources */,
 				FADD66882A80ED8700AECC0D /* NetworkService.swift in Sources */,
 				FADD66802A80E55B00AECC0D /* HTTPStatusCode.swift in Sources */,
+				FA4CA09A2A812740001BB771 /* DoubleRowStyleLayout.swift in Sources */,
 				FADD66842A80EC5400AECC0D /* NetworkError.swift in Sources */,
+				FA4CA0A22A8129D3001BB771 /* PaddingTextField.swift in Sources */,
 				FADD66632A80D83800AECC0D /* AppDelegate.swift in Sources */,
 				FADD667B2A80DCEF00AECC0D /* PhotoListViewController.swift in Sources */,
 				FADD66822A80E99400AECC0D /* NetworkManager.swift in Sources */,
 				FADD668B2A80EDE900AECC0D /* PhotosListResponse.swift in Sources */,
 				FADD667E2A80E20A00AECC0D /* Request.swift in Sources */,
 				FADD66652A80D83800AECC0D /* SceneDelegate.swift in Sources */,
+				FA4CA0A52A812B2A001BB771 /* PhotoListViewModel.swift in Sources */,
 				FADD666D2A80D83800AECC0D /* Qardio_App.xcdatamodeld in Sources */,
 				FADD66862A80ED5C00AECC0D /* DataParser.swift in Sources */,
+				FA4CA09F2A81296F001BB771 /* PhotoListHeaderView.swift in Sources */,
 				FADD668F2A80FCF800AECC0D /* KeyedDecodingContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
