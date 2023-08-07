@@ -16,7 +16,7 @@ final class PhotoListHeaderView: UIView {
     
     private let historyTable = UITableView()
     private let searchTextField = PaddingTextField()
-    private let icon = UIImageView(image: UIImage(systemName: "magnifyingglass"))
+    private let searchButton = UIButton()
     
     private let itemHeight = 45.0
     private let allwaysWisibleHeight = 55.0
@@ -36,7 +36,7 @@ final class PhotoListHeaderView: UIView {
     }
     
     private func setupConstraints() {
-        [searchTextField, historyTable, icon].forEach({
+        [searchTextField, historyTable, searchButton].forEach({
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         })
@@ -44,20 +44,22 @@ final class PhotoListHeaderView: UIView {
         let viewsDict = [
             "searchTextField" : searchTextField,
             "historyTable" : historyTable,
-            "icon" : icon,
+            "searchButton" : searchButton,
         ] as [String : Any]
         
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-5-[searchTextField(45)]|", options: [], metrics: nil, views: viewsDict))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-10-[icon(35)]|", options: [], metrics: nil, views: viewsDict))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[searchButton(55)]|", options: [], metrics: nil, views: viewsDict))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[searchTextField]-5-[historyTable]-0-|", options: [], metrics: nil, views: viewsDict))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-\(allwaysWisibleHeight)-[historyTable]-0-|", options: [], metrics: nil, views: viewsDict))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-5-[icon(45)]-5-[searchTextField]-6-|", options: [], metrics: nil, views: viewsDict))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-5-[searchButton(45)]-5-[searchTextField]-6-|", options: [], metrics: nil, views: viewsDict))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-6-[historyTable]-6-|", options: [], metrics: nil, views: viewsDict))
     }
     
     private func setupUI() {
-        icon.tintColor = .lightGray
-        icon.contentMode = .scaleAspectFit
+        searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        searchButton.tintColor = .lightGray
+        searchButton.contentMode = .scaleAspectFit
+        searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         
         historyTable.delegate = self
         historyTable.dataSource = self
@@ -81,17 +83,28 @@ final class PhotoListHeaderView: UIView {
     func setSearchText(_ search: String?) {
         searchTextField.text = search
     }
-}
-
-extension PhotoListHeaderView: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        let query = textField.text ?? ""
+    
+    @objc private func searchButtonTapped() {
+        if searchTextField.isFirstResponder {
+            search()
+        } else {
+            searchTextField.becomeFirstResponder()
+        }
+    }
+    
+    private func search() {
+        searchTextField.resignFirstResponder()
+        let query = searchTextField.text ?? ""
         delegate?.historyViewDidSearch(query: query)
         if !query.isEmpty {
             SearchHistiryManager.sharedManager.save(query: query)
         }
-        
+    }
+}
+
+extension PhotoListHeaderView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        search()
         return true
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {

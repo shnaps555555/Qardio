@@ -91,6 +91,9 @@ here</string>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="vWs-PM-R4F"/>
                                 </connections>
                             </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoResults" translatesAutoresizingMaskIntoConstraints="NO" id="FCh-Go-eLb">
+                                <rect key="frame" x="50" y="231" width="293" height="390"/>
+                            </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFo-c7-Jcb" customClass="PhotoListHeaderView" customModule="Qardio_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="59" width="393" height="55"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -104,9 +107,12 @@ here</string>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="FCh-Go-eLb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8XH-mZ-IBW"/>
                             <constraint firstItem="aYa-zP-jKI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="9EN-Jf-Vp6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FCh-Go-eLb" secondAttribute="trailing" constant="50" id="L1l-0w-xEv"/>
+                            <constraint firstItem="FCh-Go-eLb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TCa-aE-PPx"/>
                             <constraint firstItem="xXu-xi-7NC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="W1b-Ss-y2f"/>
                             <constraint firstItem="xXu-xi-7NC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZoZ-Ev-pYS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OFo-c7-Jcb" secondAttribute="trailing" id="oO5-C3-Lrn"/>
@@ -120,6 +126,7 @@ here</string>
                     <connections>
                         <outlet property="activityIndicator" destination="xXu-xi-7NC" id="lUk-Be-S6d"/>
                         <outlet property="collectionView" destination="aYa-zP-jKI" id="Mud-yP-7qo"/>
+                        <outlet property="noResultsImageView" destination="FCh-Go-eLb" id="6ka-Wa-qBC"/>
                         <outlet property="searchView" destination="OFo-c7-Jcb" id="6cZ-6h-QDJ"/>
                         <outlet property="searchViewHeightConstraint" destination="qEo-X7-IDT" id="dwF-Sc-BMF"/>
                     </connections>
@@ -130,6 +137,7 @@ here</string>
         </scene>
     </scenes>
     <resources>
+        <image name="NoResults" width="388" height="390"/>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

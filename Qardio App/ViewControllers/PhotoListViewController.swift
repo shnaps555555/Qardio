@@ -10,6 +10,7 @@ import UIKit
 final class PhotoListViewController: UIViewController {
     
     @IBOutlet private weak var searchView: PhotoListHeaderView!
+    @IBOutlet private weak var noResultsImageView: UIImageView!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var searchViewHeightConstraint: NSLayoutConstraint!
@@ -34,6 +35,7 @@ final class PhotoListViewController: UIViewController {
             
             self.activityIndicator.stopAnimating()
             self.collectionView.reloadData()
+            self.noResultsImageView.isHidden = !self.viewModel.photos.isEmpty
         }
         viewModel.loadPhotos()
     }
@@ -56,7 +58,7 @@ extension PhotoListViewController: PhotoListHeaderViewDelegate {
     func historyViewDidSearch(query: String) {
         viewModel.searchQuery = query
         viewModel.loadPhotos()
-        collectionView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: true)
+        collectionView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: true) // just return back to the beginning
     }
     
 }
@@ -76,6 +78,12 @@ extension PhotoListViewController: UICollectionViewDataSource {
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photo = viewModel.photos[indexPath.row]
+        searchView.setSearchText(photo.title)
+        historyViewDidSearch(query: photo.title)
     }
 }
 
